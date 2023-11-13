@@ -1,26 +1,18 @@
-// App.js
-import React, { useState } from "react";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TablaMedicamentos from "./components/pages/TablaMedicamentos";
 import Login from "./components/Login";
+import Register from "./components/Registro"; // Asegúrate de tener un componente de registro
 
 function App() {
-  const [user, setUser] = useState(null);
-
-  const handleLogin = (username) => {
-    // Simplemente establece el nombre de usuario para este ejemplo, pero aquí es donde harías la lógica real de inicio de sesión
-    setUser(username);
-  };
-
   return (
-    <div>
-      {user ? (
-        // Si el usuario está autenticado, muestra la TablaMedicamentos
-        <TablaMedicamentos />
-      ) : (
-        // Si no está autenticado, muestra el componente de Login
-        <Login onLogin={handleLogin} />
-      )}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={<TablaMedicamentos />} />
+      </Routes>
+    </Router>
   );
 }
 

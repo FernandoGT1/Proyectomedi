@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom"; 
 import backgroundImg from "../img/IMG.1.jpg"; 
 
 const Login = ({ onLogin }) => {
@@ -68,13 +69,11 @@ const Login = ({ onLogin }) => {
                       Iniciar sesión
                     </button>
                     <div className="mt-3">
-                      <button
-                        type="button"
-                        className="btn btn-secondary"
-                        onClick={handleRegister}
-                      >
+
+                    <Link to="/register" className="btn btn-secondary">
                         Registrarse
-                      </button>
+                      </Link>
+
                     </div>
                   </div>
                 </form>
