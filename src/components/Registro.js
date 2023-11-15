@@ -22,6 +22,7 @@ const Register = () => {
     backgroundImage: `url(${backgroundImage})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
+    backgroundColor: "blue", // Agrega esta línea para establecer el color de fondo azul
   };
 
   return (
